@@ -1,0 +1,64 @@
+/* buttons */
+.btn{
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	border: 1px solid transparent;
+	text-align: center;
+	border-radius: $btn-border-radius-base;
+	font-weight: $btn-font-weight;
+	font-size: $btn-font-size;
+	line-height: $btn-line-height;
+	padding: 13px 18px;
+	color: $btn-color;
+	width: auto;
+	min-width: $btn-min-width;
+	cursor: pointer;
+	transition: background .3s, color .3s, border-color .3s;
+	@include media("<phone"){
+		font-size: 16px;
+		line-height: 20px;
+		padding: 8px 30px;
+		color: #fff;
+		min-width: 136px;
+	}
+	&.active:focus,
+	&.active:hover,
+	&:focus,
+	&:active,
+	&:hover{
+		box-shadow: none;
+		outline: none;
+	}
+}
+.btn_default{
+	background: $orange;
+	border: 1px solid $orange;
+	color: $white;
+	&:hover{
+		color: $orange;
+		background: $white;
+		border-color: $orange;
+	}
+	&:active{
+		color: $orange;
+		background: $white;
+		border-color: $orange;
+	}
+}
+.btn_info{
+	background: $white;
+	border: 1px solid $orange;
+	color: $orange;
+	&:hover{
+		color: $white;
+		background: $orange;
+		border-color: $orange;
+	}
+	&:active{
+		color: $white;
+		background: $orange;
+		border-color: $orange;
+	}
+}
+/*end btn*/

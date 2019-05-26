@@ -1,0 +1,56 @@
+// vars
+$fonts: '../fonts/';
+$images: '../images/';
+
+// fonts
+$OpenSans: 'Open Sans', sans-serif;
+
+$breakpoints: (
+	phone-xs: 375px,
+	phone: 768px,
+	tablet: 992px,
+	desktop: 1200px,
+	desktop_lg: 1400px,
+);
+
+// font settings
+$grid-gutter-width: 10px;
+$container-large-desktop: 1110px;
+
+$font-family-base: $OpenSans;
+$font-size-base: 14px;
+$line-height-base: 1.25;
+$font-size-h1: 30px;
+$font-size-h2: 36px;
+$font-size-h3: 24px;
+$font-size-h4: 16px;
+
+$paragraph-spacing: 0 0 15px;
+
+$hover-opacity: 0.8;
+$time-animation: 0.3s;
+
+// colors
+$white: #fff;
+$black: #000;
+$gray: #212121;
+
+$sand: #F5F5F5;
+$alabaster: #FBFBFB;
+$gray_cod: #1A1919;
+$orange: #F47116;
+$alto: #CECECE;
+$mercury: #E9E9E9;
+
+
+$base-color: $gray;
+$body-bg: $white;
+
+$link-color: $black;
+
+$btn-color: $white;
+$btn-border-radius-base: 3px;
+$btn-font-size: 14px;
+$btn-line-height: 18px;
+$btn-font-weight: 700;
+$btn-min-width: 160px;
