@@ -16,11 +16,8 @@
 	cursor: pointer;
 	transition: background .3s, color .3s, border-color .3s;
 	@include media("<phone"){
-		font-size: 16px;
-		line-height: 20px;
-		padding: 8px 30px;
-		color: #fff;
-		min-width: 136px;
+		padding: 8px 15px;
+		min-width: 120px;
 	}
 	&.active:focus,
 	&.active:hover,
