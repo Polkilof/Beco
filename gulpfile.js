@@ -119,7 +119,7 @@ gulp.task('js2', () => {
 });
 
 gulp.task('images', () => {
-	return gulp.src(path.src.img)
+	gulp.src(path.src.img)
 		.pipe(changed(path.public.img))
 		.pipe(imagemin({progressive: true, optimizationLevel: 0, interlaced: true}))
 		.pipe(gulp.dest(path.public.img));
@@ -132,18 +132,18 @@ gulp.task('fonts', () => {
 
 gulp.task('watch', () => {
 	// Watch .html files
-	gulp.watch(path.src.html, ['html', browser.reload]);
-	gulp.watch(path.public.html).on('change', browser.reload);
+	gulp.watch('src/**/*.html', ['html', browser.reload]);
+	gulp.watch("public/*.html").on('change', browser.reload);
 	// Watch .sass files
-	gulp.watch(path.src.style.sass, ['styles', browser.reload]);
+	gulp.watch('src/sass/**/*.scss', ['styles', browser.reload]);
 	//gulp.watch('src/css/**/*.css.map', ['styles', browser.reload]);
 	//gulp.watch('src/css/**/*.css', ['styles', browser.reload]);
-	gulp.watch(path.src.style.css, ['minify', browser.reload]);
+	gulp.watch('src/css/**/*.css', ['minify', browser.reload]);
 	// Watch .js files
-	gulp.watch(path.src.js, ['js', browser.reload]);
-	gulp.watch(path.src.js, ['js2', browser.reload]);
+	gulp.watch('src/js/*.js', ['js', browser.reload]);
+	gulp.watch('src/js/*.js', ['js2', browser.reload]);
 	// Watch image files
-	gulp.watch(path.src.img, ['images', browser.reload]);
+	gulp.watch('src/images/**/*', ['images', browser.reload]);
 	// Watch .fonts files
-	gulp.watch(path.src.fonts, ['fonts', browser.reload]);
+	gulp.watch('src/fonts/**/*.*', ['fonts', browser.reload]);
 });
