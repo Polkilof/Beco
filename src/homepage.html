@@ -2,12 +2,12 @@
 <html lang="en" prefix="og: http://ogp.me/ns#">
 <head>
 	<meta charset="utf-8">
-	<meta name = "format-detection" content = "telephone=no">
+	<meta name ="format-detection" content = "telephone=no">
 	<meta name="viewport" content="width=device-width">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<title>Title Name</title>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 	<meta property="og:title" content="Project" />
@@ -24,32 +24,90 @@
 	<div class="wrapper home">
 		<div class="page">
 			//= inc/_header.html
-			<div class="visual" style="height: 40vh; background: #333;">
-				
+			<div class="visual img-to-bg">
+				<img src="images/img-visual.jpg" alt="image description">
+				<div class="container">
+					<div class="visual__slider">
+						<section class="visual__slider-item">
+							<div class="visual__slider-content">
+								<h1 class="h1 visual__slider-title">Great products start from real problems</h1>
+								<p class="visual__slider-text">This book helps you look at the whole product picture from the point of view of your customers. For anybody looking for a powerful framework to guide your product building, this is it.</p>
+								<a href="#" class="btn btn_default">Learn More</a>
+							</div>
+						</section>
+						<section class="visual__slider-item">
+							<div class="visual__slider-content">
+								<h1 class="h1 visual__slider-title">Great products</h1>
+								<p class="visual__slider-text">This book helps you look at the whole product picture from the point of view of your customers.</p>
+								<a href="#" class="btn btn_default">Learn More</a>
+							</div>
+						</section>
+					</div>
+				</div>
 			</div>
-			<div class="container">
-				<ul class="socials">
-					<li class="socials__item">
-						<a href="#" class="socials__link socials__link_facebook"><i class="fab fa-facebook"></i></a>
-					</li>
-					<li class="socials__item">
-						<a href="#" class="socials__link socials__link_instagram"><i class="fab fa-instagram"></i></a>
-					</li>
-					<li class="socials__item">
-						<a href="#" class="socials__link socials__link_twitter"><i class="fab fa-twitter"></i></a>
-					</li>
-				</ul>
-				<form action="#" class="form_subscribe">
-					<input type="text" class="form__control" placeholder="E-mail">
-					<input type="submit" class="btn btn_info" value="Join">
-				</form>
+
+			<section class="why _padding">
+				<div class="container">
+					<h2 class="h2 _title">Why we?<span>Why we?</span></h2>
+					<ul class="why-list">
+						<li class="why-list__item">
+							<img src="images/img-why-01.jpg" alt="image description">
+							<h4 class="h4">Over 20 Years of experience</h4>
+						</li>
+						<li class="why-list__item">
+							<img src="images/img-why-01.jpg" alt="image description">
+							<h4 class="h4">Widest range of High temp. Bearings and Pillow blocks</h4>
+						</li>
+						<li class="why-list__item">
+							<img src="images/img-why-01.jpg" alt="image description">
+							<h4 class="h4">Distribution in 65 countries</h4>
+						</li>
+						<li class="why-list__item">
+							<img src="images/img-why-01.jpg" alt="image description">
+							<h4 class="h4">Customized service</h4>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<div class="search-block">
+				<div class="container">
+					<form action="#" class="form form_line form_search">
+						<input type="text" class="form__control" placeholder="Product Name">
+						<input type="submit" class="btn btn_default" value="Search">
+					</form>
+				</div>
 			</div>
+			<section class="services _padding">
+				<div class="container">
+					<h2 class="h2 _title">Our services<span>Our services</span></h2>
+				</div>
+			</section>
+			<section class="documentation _padding">
+				<div class="container">
+					<h2 class="h2 _title">Documentation<span>Documentation</span></h2>
+				</div>
+			</section>
+			<section class="latest-news _padding">
+				<div class="container">
+					<h2 class="h2 _title">Latest News<span>Latest News</span></h2>
+				</div>
+			</section>
+			<section class="subscribe">
+				<div class="container">
+					<form action="#" class="form form_line form_subscribe">
+						<input type="text" class="form__control" placeholder="Enter your Email">
+						<input type="submit" class="btn btn_default" value="Subscribe">
+					</form>
+				</div>
+			</section>
+			
 		</div>
 		//= inc/_footer.html
 	</div><!-- / wrapper -->
 	
 	<noscript>Detected missing Javascript support. Certain website features will not operate correctly with Javascript disabled.</noscript>
 	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/slick.min.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>
