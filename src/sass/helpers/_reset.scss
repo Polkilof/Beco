@@ -177,7 +177,7 @@ table{border-collapse: collapse;}
 .phone-item{
 	pointer-events: none;
 	@include media("<tablet"){
-		pointer-events: default;
+		pointer-events: auto;
 	}
 }
 ._padding{
