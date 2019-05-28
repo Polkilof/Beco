@@ -6,6 +6,30 @@ function initPage(){
 	accordeon();
 	tabs();
 	initSlider();
+	filter();
+
+	$('[data-fancybox="gallery"]').fancybox({
+	// Options will go here
+	});
+
+}
+
+function filter(){
+	$('.components__list').isotope({
+		itemSelector: '.components__item',
+		layoutMode: 'fitRows'
+	});
+	$('.filter .filter__link').click(function(e){
+		e.preventDefault();
+		$('.filter .filter__link').removeClass('active');
+		$(this).addClass('active');
+
+		var selector = $(this).parent().attr('data-filter');
+		$('.components__list').isotope({
+			filter: selector
+		});
+		return false;
+	});
 }
 
 function ImgTobg() {
