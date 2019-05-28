@@ -256,6 +256,9 @@ h4, .h4{
 	@include media("<tablet"){}
 	@include media("<phone"){}
 }
+._center{
+	text-align: center !important;
+}
 p{margin: $paragraph-spacing;}
 /*end typography*/
 /* styles end */
