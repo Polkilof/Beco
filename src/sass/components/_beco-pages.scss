@@ -9,8 +9,7 @@
 	&__item{
 		width: 33.333%;
 		padding: 30px 15px;
-		display: flex;
-		flex-direction: column;
+		
 	}
 	&__box-img{
 		display: block;
@@ -62,8 +61,10 @@
 		transition: all .3s;
 	}
 	&__list-link{
-		display: block;
+		display: flex;
+		flex-direction: column;
 		transition: all .3s;
+		height: 100%;
 		&:hover{
 			background: #fff;
 			box-shadow: 0px 0px 40px rgba(94, 93, 93, 0.1);
@@ -475,15 +476,19 @@
 		display: inline-block;
 	    vertical-align: top;
 	    min-width: 255px;
-	    border: 1px solid #E9E9E9;
+	    + .filter__item{
+	    	margin-top: -1px;
+	    }
 	}
 	&__link{
 		display: block;
 	    padding: 27px 5px;
 	    text-align: center;
 	    transition: all .3s;
+	    border: 1px solid #E9E9E9;
 	    &:hover{
 	    	background: $orange;
+	    	border-color: $orange;
 	    	.filter__descr{
 	    		color: #fff;
 	    	}
@@ -502,6 +507,9 @@
 	&__flex-container{
 		display: flex;
 		align-items: flex-start;
+	}
+	&__items{
+		width: 100%;
 	}
 	&__list{
 		margin: 0 -15px;
