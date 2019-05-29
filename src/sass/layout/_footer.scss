@@ -27,6 +27,8 @@
 			font-size: 12px;
 		}
 	}
+}
+.footer-page{
 	.row{
 		display: flex;
 		flex-flow: row wrap;
@@ -39,9 +41,9 @@
 			flex: 1 1 25%;
 			padding: 0 15px 30px;
 		}
-	}
-	.h3{
-		margin-bottom: 24px;
+		.h3{
+			margin-bottom: 24px;
+		}
 	}
 }
 .footer-links{
@@ -53,6 +55,9 @@
 	&__item{
 		display: block;
 		margin-bottom: 8px;
+		&:last-child{
+			margin-bottom: 0;
+		}
 	}
 	&__link{
 		display: inline-block;

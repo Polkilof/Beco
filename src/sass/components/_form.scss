@@ -86,12 +86,12 @@
 	display: inline-block;
 	vertical-align: top;
 	width: 100%;
-	height: 48px;
-	font-size: 15px;
-	line-height: 20px;
+	height: 44px;
+	font-size: 12px;
+	line-height: 16px;
 	font-weight: 400;
-	padding: 14px 20px;
-	color: $gray;
+	padding: 10px 16px;
+	color: $gray_cod;
 	background-color: transparent;
 	border: none;
 	border: 1px solid #EEECEC;
@@ -100,21 +100,17 @@
 	margin: 0;
 	border-radius: 3px;
 	transition: all .2s;
-	@include media("<phone"){
-		font-size: 14px;
-		height: 40px;
-		padding: 8px 16px;
-	}
+	@include media("<phone"){}
 	&::-webkit-input-placeholder {
-		color: $alto;
+		color: $gray;
 		opacity: 1;
 	}
 	&::-ms-input-placeholder {
-		color: $alto;
+		color: $gray;
 		opacity: 1;
 	}
 	&::-moz-placeholder {
-		color: $alto;
+		color: $gray;
 		opacity: 1;
 	}
 	&:focus{
@@ -122,388 +118,40 @@
 		box-shadow: none;
 		border: 1px solid $gray_cod;
 	}
-
+	&.type2{
+		color: $gray;
+		background-color: #FAFAFA;
+		border: 1px solid #FAFAFA;
+		&::-webkit-input-placeholder {
+			color: #B1B1B1;
+			opacity: 1;
+		}
+		&::-ms-input-placeholder {
+			color: #B1B1B1;
+			opacity: 1;
+		}
+		&::-moz-placeholder {
+			color: #B1B1B1;
+			opacity: 1;
+		}
+		&:focus{
+			outline: none;
+			box-shadow: none;
+			border: 1px solid $mercury;
+		}
+	}
 }
 textarea.form__control{
-	height: 150px;
+	height: 120px;
 	resize: none;
 	&_small{}
 }
 
-.password__view{
-	position: absolute;
-	top: 50%;
-	right: 16px;
-	transform: translate(0, -50%);
-	height: 20px;
-	width: 20px;
-	cursor: pointer;
-	z-index: 2;
-	background: url(../images/private-eye.svg) no-repeat 50% 50%;
-	background-size: 20px auto;
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity .3s,visibility .3s;
-	&:hover{
-		background-image: url(../images/private-eye_hover.svg);
-	}
-	&.active{
-		background-image: url(../images/private-eye_active.svg);
-	}
-}
-.password_enter{
-	.password__view{
-		opacity: 1;
-		visibility: visible;
-	}
-}
-
-.jcf-select{
-	display: block;
-	position: relative;
-	border: 1px solid #EEECEC;
-	margin: 0;
-	width: 100%;
-	border-radius: 3px;
-	height: 48px;
-	background: $white;
-	cursor: default;
-	color: $gray;
-	min-width: 145px;
-	@include media("<phone"){
-		height: 40px;
-	}
-}
-.jcf-select .jcf-select-opener{
-	position: absolute;
-	background: transparent;
-	width: 50px;
-	bottom: 0;
-	right: 0;
-	top: 0;
-}
-.jcf-select .jcf-select-opener:before{
-	content: "";
-	position: absolute;
-	top: 50%;
-	right: 20px;
-	border-top: 1px solid transparent;
-	border-left: 1px solid transparent;
-	width: 8px;
-	height: 8px;
-	margin: -2px 0 0;
-	border-color: $gray;
-	transform: translate(0, -50%) rotate(225deg);
-	transition: all .3s ease-in-out;
-}
-.jcf-select.jcf-drop-active .jcf-select-opener:before{
-	border-color: $gray;
-	-webkit-transform: translate(0, -50%) rotate(45deg);
-	transform: translate(0, -50%) rotate(45deg);
-	margin: 2px 0 0;
-}
-.jcf-select .jcf-select-text {
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-	cursor: default;
-	display: block;
-	text-align: left;
-	font-size: 15px;
-	line-height: 20px;
-	font-weight: 400;
-	color: $gray;
-	margin: 0 50px 0 0;
-	padding: 14px 20px;
-	@include media("<phone"){
-		font-size: 14px;
-		padding: 9px 16px;
-	}
-}
-.jcf-select-drop .jcf-select-drop-content{
-	border: 1px solid #EEECEC;
-	border-bottom-right-radius: 3px;
-	border-bottom-left-radius: 3px;
-}
-.jcf-list{
-	display: inline-block;
-	vertical-align: top;
-	position: relative;
-	background: $white;
-	font-size: 15px;
-	line-height: 20px;
-	font-weight: 400;
-	color: $gray;
-	letter-spacing: 0;
-	border-top-right-radius: 0;
-	border-top-left-radius: 0;
-	border-bottom-right-radius: 3px;
-	border-bottom-left-radius: 3px;
-	width: 100%;
-	.jcf-option{
-		white-space: nowrap;
-		overflow: hidden;
-		display: block;
-		color: $gray;
-		min-height: 25px;
-		height: 1%;
-		margin: 0;
-		padding: 10px 20px;
-		transition: color .3s;
-		cursor: pointer;
-		@include media("<phone"){
-			padding: 8px 16px;
-		}
-		&.jcf-selected{
-			color: $orange;
-		}
-	}
-}
-.jcf-select-drop .jcf-hover, .jcf-list-box .jcf-selected{
-	background: $white;
-	color: $orange;
-}
-.jcf-focus, .jcf-focus * {border-color: #EEECEC !important;}
-body>.jcf-select-drop {
-	position: absolute;
-	margin: -1px 0 0;
-	z-index: 9999;
-}
-body>.jcf-select-drop.jcf-drop-flipped {
-	margin: 1px 0 0;
-}
-.jcf-select-drop.jcf-drop-flipped .jcf-list{
-	border-top-right-radius: 3px;
-	border-top-left-radius: 3px;
-	border-bottom-right-radius: 0;
-	border-bottom-left-radius: 0;
-}
-.jcf-list-content .jcf-option-hideme{display: none;}
-
-.jcf-select-mini{
-	border: 0;
-	position: absolute;
-	bottom: 1px;
-	right: 13px;
-	width: 80px;
-	min-width: 80px;
-	height: 46px;
-	@include media("<phone"){
-		bottom: 13px;
-		height: 38px;
-		width: 70px;
-		min-width: 70px;
-	}
-	.jcf-select-text{
-		margin: 0 32px 0 0;
-		padding: 13px 8px 13px 16px;
-		@include media("<phone"){
-			padding: 9px 8px 9px 16px;
-		}
-	}
-	.jcf-select-opener{
-		width: 26px;
-		&:before{
-			right: 16px;
-		}
-	}
-}
-body>.jcf-select-drop.jcf-select-mini{
-	margin: 0 0 0 1px;
-	.jcf-list .jcf-option{
-		padding: 8px 14px;
-		@include media("<phone"){}
-	}
-}
-/* end jcf-select */
-
-
-/* switch */
-.switch{
-	display: inline-block;
-	position: relative;
-	cursor: pointer;
-	-webkit-tap-highlight-color: transparent;
-	width: 130px;
-	&__label{
-		display: block;
-		width: 100%;
-		height: 100%;
-		&:before, &:after{
-			content: "";
-			cursor: pointer;
-			position: absolute;
-			top: 0;
-			left: 0;
-		}
-		&:before{
-			width: 100%;
-			height: 100%;
-			background-color: transparent;
-		}
-		&:after{
-			top: 50%;
-			z-index: 3;
-			transition: transform .4s cubic-bezier(0.44,-0.12, 0.07, 1.15);
-		}
-	}
-	&__toggle{
-		width: 0;
-		height: 0;
-		opacity: 0;
-		position: absolute;
-		top: 0;
-		left: 0;
-	}
-	&_type1{
-		width: 48px;
-		height: calc(48px / 2);
-		border-radius: 60px;
-		background-color: $white;
-		.switch__label{
-			border-radius: 60px;
-			border: 1px solid #EEECEC;
-			&:before{
-				border-radius: 60px;
-				transition: opacity .2s ease-out .1s, transform .2s ease-out .1s;
-				transform: scale(1);
-				opacity: 1;
-			}
-			&:after{
-				width: calc((48px / 2) - 4px);
-				height: calc((48px / 2) - 4px);
-				transform: translate3d(15%, -50%, 0) scale(1);
-				background-color: #EEECEC;
-				border-radius: 100%;
-			}
-		}
-	}
-}
-.switch_type1 .switch__toggle:checked ~ .switch__label{
-	border-color: $orange;
-}
-.switch_type1 .switch__toggle:checked ~ .switch__label:before{
-	transform: scale(0);
-	opacity: .7;
-}
-.switch_type1 .switch__toggle:checked ~ .switch__label:after{
-	transform: translate3d(125%, -50%, 0) scale(1);
-	background: $orange;
-}
-/* end switch */
-
-/* radio checkbox */
-.radio{
-	font-size: 16px;
-	line-height: 24px;
-	font-weight: 500;
-	color: $gray_cod;
-	margin-bottom: 12px;
-	overflow: hidden;
-	@include media('<phone'){
-		font-size: 14px;
-		line-height: 20px;
-	}
-	&.mb0{
-		margin-bottom: 0;
-	}
-}
-.radio label{
-	display: inline-block;
-	vertical-align: top;
-}
-.radio span{
-	display: inline-block;
-	vertical-align: top;
-	transition: all .3s;
-}
-.radio [type=radio] {
-	position: absolute;
-	opacity: 0;
-	visibility: hidden;
-	z-index: -1;
-}
-.radio label{
-	position: relative;
-	padding-left: 32px;
-	cursor: pointer;
-}
-.radio [type=radio]:not(:checked) ~ .control-indicator,
-.radio [type=radio]:checked ~ .control-indicator{
-	content: '';
-	position: absolute;
-	left:0;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 24px;
-	height: 24px;
-	margin-top: 0;
-	border: 1px solid #EEECEC;
-	background: $white;
-	border-radius: 50%;
-	@include media('<phone'){
-		width: 20px;
-		height: 20px;
-	}
-}
-.radio [type=radio]:checked ~ span{
-	color: $gray;
-}
-.radio [type=radio]:checked ~ .control-indicator{
-	background: $white;
-	border-color: $orange;
-}
-.radio [type=radio]:not(:checked) ~ .control-indicator:after,
-.radio [type=radio]:checked ~ .control-indicator:after{
-	content: '';
-	position: absolute;
-	top: 4px;
-	left: 4px;
-	width: 14px;
-	height: 14px;
-	background-color: $orange;
-	border-radius: 50%;
-	transition: all .2s;
-	@include media('<phone'){
-		width: 10px;
-		height: 10px;
-	}
-}
-.radio [type=radio]:not(:checked) ~ .control-indicator:after{
-	opacity: 0;
-	transform: scale(0);
-}
-.radio [type=radio]:checked ~ .control-indicator:after{
-	opacity: 1;
-	transform: scale(1);
-}
-.radio [type=radio]:disabled:not(:checked) ~ .control-indicator,
-.radio [type=radio]:disabled:checked ~ .control-indicator{
-	box-shadow: none;
-	border-color: #e1e2e6;
-	background-color: #f9f9f9;
-	opacity: 0.6;
-}
-.radio [type=radio]:not(:checked) ~ .control-indicator{
-	box-shadow: none;
-	border-color: #aaa;
-	background-color: #fff;
-}
-.radio [type=radio]:disabled:checked ~ .control-indicator:after{
-	color: #999;
-}
-.radio [type=radio]:disabled ~ span{
-	color: #9e9e9e;
-}
-/* end radio checkbox */
-
-
-
 .form-group{
 	position: relative;
-	max-width: 330px;
+	/* max-width: 330px;
 	min-width: 280px;
-	width: 100%;
+	width: 100%; */
 	margin: 0 auto;
 	&__control{
 		width: 100%;
@@ -561,5 +209,32 @@ body>.jcf-select-drop.jcf-select-mini{
 		font-weight: 400;
 		color: $gray;
 		margin-bottom: 0;
+	}
+}
+.password__view{
+	position: absolute;
+	top: 50%;
+	right: 16px;
+	transform: translate(0, -50%);
+	height: 20px;
+	width: 20px;
+	cursor: pointer;
+	z-index: 2;
+	background: url(../images/private-eye.svg) no-repeat 50% 50%;
+	background-size: 20px auto;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .3s,visibility .3s;
+	&:hover{
+		background-image: url(../images/private-eye_hover.svg);
+	}
+	&.active{
+		background-image: url(../images/private-eye_active.svg);
+	}
+}
+.password_enter{
+	.password__view{
+		opacity: 1;
+		visibility: visible;
 	}
 }

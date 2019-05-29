@@ -7,11 +7,9 @@ function initPage(){
 	tabs();
 	initSlider();
 	filter();
+	validateFields();
 
-	$('[data-fancybox="gallery"]').fancybox({
-	// Options will go here
-	});
-
+	$('[data-fancybox="gallery"]').fancybox({});
 }
 
 function filter(){
@@ -121,3 +119,118 @@ function initSlider(){
 		}, 250);
 	});
 }
+
+function validateFields(){
+	$("._validate").validate({
+		highlight: function(element) {
+			$(element).parent().addClass('form__box_error').removeClass('form__box_valid');
+		},
+		unhighlight: function(element) {
+			$(element).parent().removeClass('form__box_error').addClass('form__box_valid');
+		},
+		rules: {
+			request: {
+				required: false,
+			},
+			username: {
+				required: true,
+				minlength: 2,
+				myName: true,
+			},
+			email: {
+				required: true,
+				myEmail: true,
+			},
+			phone: {
+				required: true,
+				myPhone: true,
+			},
+			message: {
+				required: true,
+				minlength: 2,
+			}
+		},
+		messages: {
+			request: {
+				required: false,
+			},
+			username: {
+				required: false,
+				minlength: false,
+				myName: false,
+			},
+			email: {
+				required: false,
+				email: false,
+				myEmail: false,
+			},
+			phone: {
+				required: false,
+				myPhone: false,
+			},
+			message: {
+				required: false,
+				minlength: false,
+			}
+		}
+	});
+	$.validator.addMethod(
+		"myName",
+		function(value, element){
+			return value.match(/^[A-Za-zА-Яа-яЁё\s]+$/);
+		}
+	);
+	$.validator.addMethod(
+		"myPhone",
+		function(value, element){
+			return value.match(/[0-9\-\(\)\s]+/);
+		}
+	);
+	$.validator.addMethod(
+		"myEmail",
+		function(value, element){
+			return value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+		}
+	);
+}
+
+function mapInitialize(map_) {
+	var latlng = new google.maps.LatLng(48.98021699, 18.17138672);
+	var Markerlatlng = new google.maps.LatLng(51.5149042, 0.1235499);
+	var myOptions = {
+		center: latlng,
+		zoom: 5,
+		scrollwheel: false,
+		zoomControl: true,
+		mapTypeControl: false,
+		scaleControl: false,
+		streetViewControl: false,
+		rotateControl: false,
+		disableDoubleClickZoom: true
+	};
+	var map = new google.maps.Map(document.getElementById(map_), myOptions);
+	var stylesBW = [
+		{
+			featureType: "all",
+			stylers: [
+				{ saturation: 0 }
+			]
+		}
+	];
+	map.setOptions({styles: stylesBW});
+	var marker = new google.maps.Marker({
+		position: Markerlatlng,
+		icon: '../images/ico-marker.png',
+		map: map
+	});
+
+	new google.maps.Marker({
+		position: new google.maps.LatLng(49.98696603, 36.23341978),
+		icon: '../images/ico-marker.png',
+		map: map
+	})
+}
+$('#map').each(function(){
+	var map_ = $(this).attr('id');
+	mapInitialize(map_);
+});

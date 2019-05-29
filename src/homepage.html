@@ -8,6 +8,7 @@
 	<meta name="keywords" content="">
 	<title>Title Name</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 	<meta property="og:title" content="Project" />
@@ -227,47 +228,39 @@
 					</div>
 				</div>
 			</section>
-			<form class="form-group">
-				<h2 class="h2 account-heading">Join Eventamigos</h2>
-				<div class="form-group__control">
-					<div class="form__box">
-						<input type="text" placeholder="First name" class="form__control" name="firstname" id="firstname" minlength="2" required>
+			<div class="container">
+				<form class="form-group _validate">
+					<h2 class="h2 account-heading">Inquiry fast</h2>
+					<div class="form-group__control">
+						<div class="form__box">
+							<input type="text" placeholder="Company Name" class="form__control type2" name="companyname" id="companyname">
+						</div>
+						<div class="form__box">
+							<input type="email" name="email" placeholder="E-mail*" class="form__control type2" required>
+						</div>
+						<div class="form__box">
+							<input type="text" placeholder="Country" class="form__control type2" name="country" id="country">
+						</div>
+						<div class="form__box">
+							<input type="text" placeholder="Question" class="form__control type2" name="question" id="question">
+						</div>
+						<div class="form__box">
+							<textarea id="message" name="message" class="form__control type2" placeholder="Your message"></textarea>
+						</div>
+						<div class="form-group-check">
+							<input type="checkbox" class="form-group-checkbox" id="privacy2" name="agree">
+							<label for="privacy2" class="form-group-privacy">
+								<p class="form-group-agree">Popularised in the with the Lorem Ipsum is simply dummy text</p>
+							</label>
+						</div>
 					</div>
-					<div class="form__box">
-						<input type="text" placeholder="Last name" class="form__control" name="lastname" id="lastname" minlength="2" required>
-					</div>
-					<div class="form__box">
-						<input type="text" name="birthday" placeholder="Date of birthday" class="form__control">
-					</div>
-					<div class="form__box">
-						<input type="email" name="email" placeholder="E-mail" class="form__control">
-					</div>
-					<div class="form__box password">
-						<input type="password" name="password" placeholder="Password" class="form__control" id="password">
-						<span class="password__view"></span>
-					</div>
-					<div class="form__box password">
-						<input type="password" placeholder="Repeated password" class="form__control" id="password_again" name="password_again">
-						<span class="password__view"></span>
-					</div>
-					<div class="form-group-check">
-						<input type="checkbox" class="form-group-checkbox" id="privacy2" name="agree">
-						<label for="privacy2" class="form-group-privacy">
-							<p class="form-group-agree">I agree to the and the strong</p>
-						</label>
-					</div>
-				</div>
-				<button type="submit" class="btn btn_default">Create your account</button>
-			</form>
+					<button type="submit" class="btn btn_default">Submit</button>
+				</form>
+			</div>
 		</div>
 		//= inc/_footer.html
 	</div><!-- / wrapper -->
 	
-	<noscript>Detected missing Javascript support. Certain website features will not operate correctly with Javascript disabled.</noscript>
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/slick.min.js"></script>
-	<script src="js/isotope.pkgd.min.js"></script>
-	<script src="js/jquery.fancybox.min.js"></script>
-	<script src="js/main.js"></script>
+	//= inc/_scripts.html
 </body>
 </html>

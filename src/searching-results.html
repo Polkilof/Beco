@@ -8,6 +8,7 @@
 	<meta name="keywords" content="">
 	<title>Title Name</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 	<meta property="og:title" content="Project" />
@@ -29,9 +30,9 @@
 					<div class="result _padding">
 						<h2 class="h2 _title">Searching Results<span>results</span></h2>
 						<div class="search">
-							<form action="#">
-								<input type="text" class="form-control" placeholder="Product Name">
-								<button type="submit" class="btn-search">Search</button>
+							<form action="#" class="form form_line form_search">
+								<input type="text" class="form__control" placeholder="Product Name">
+								<input type="submit" class="btn btn_default" value="Search">
 							</form>
 						</div>
 						<div class="accordeon">
@@ -44,7 +45,7 @@
 											<path d="M20.7943 8.82353H14.9119V0H6.08841V8.82353H0.206055L10.5002 19.1176L20.7943 8.82353ZM0.206055 22.0588V25H20.7943V22.0588H0.206055Z" />
 											</svg>
 										</a>
-										<a href="#" class="details">Details</a>
+										<strong class="details">Details</strong>
 									</div>
 								</dt>
 								<dd>
@@ -107,7 +108,7 @@
 											<path d="M20.7943 8.82353H14.9119V0H6.08841V8.82353H0.206055L10.5002 19.1176L20.7943 8.82353ZM0.206055 22.0588V25H20.7943V22.0588H0.206055Z" />
 											</svg>
 										</a>
-										<a href="#" class="details">Details</a>
+										<strong class="details">Details</strong>
 									</div>
 								</dt>
 								<dd>
@@ -170,7 +171,7 @@
 											<path d="M20.7943 8.82353H14.9119V0H6.08841V8.82353H0.206055L10.5002 19.1176L20.7943 8.82353ZM0.206055 22.0588V25H20.7943V22.0588H0.206055Z" />
 											</svg>
 										</a>
-										<a href="#" class="details">Details</a>
+										<strong class="details">Details</strong>
 									</div>
 								</dt>
 								<dd>
@@ -233,7 +234,7 @@
 											<path d="M20.7943 8.82353H14.9119V0H6.08841V8.82353H0.206055L10.5002 19.1176L20.7943 8.82353ZM0.206055 22.0588V25H20.7943V22.0588H0.206055Z" />
 											</svg>
 										</a>
-										<a href="#" class="details">Details</a>
+										<strong class="details">Details</strong>
 									</div>
 								</dt>
 								<dd>
@@ -296,7 +297,7 @@
 											<path d="M20.7943 8.82353H14.9119V0H6.08841V8.82353H0.206055L10.5002 19.1176L20.7943 8.82353ZM0.206055 22.0588V25H20.7943V22.0588H0.206055Z" />
 											</svg>
 										</a>
-										<a href="#" class="details">Details</a>
+										<strong class="details">Details</strong>
 									</div>
 								</dt>
 								<dd>
@@ -358,11 +359,6 @@
 		//= inc/_footer.html
 	</div><!-- / wrapper -->
 	
-	<noscript>Detected missing Javascript support. Certain website features will not operate correctly with Javascript disabled.</noscript>
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/isotope.pkgd.min.js"></script>
-	<script src="js/jquery.fancybox.min.js"></script>
-	<script src="js/slick.min.js"></script>
-	<script src="js/main.js"></script>
+	//= inc/_scripts.html
 </body>
 </html>
