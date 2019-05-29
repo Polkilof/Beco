@@ -10,6 +10,13 @@
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 32px;
+	@include media("<phone"){
+		font-size: 12px;
+		line-height: 16px;
+		text-align: center;
+		min-height: 500px;
+		padding: 62px 0;
+	}
 	&:after{
 		content: "";
 		position: absolute;
@@ -53,10 +60,19 @@
 			color: $white;
 			text-align: left;
 			margin-bottom: 40px;
+			@include media("<phone"){
+				font-size: 36px;
+				line-height: 48px;
+				margin-bottom: 24px;
+				text-align: center;
+			}
 		}
 		&-text{
 			margin-bottom: 60px;
 			letter-spacing: 0.05em;
+			@include media("<phone"){
+				margin-bottom: 40px;
+			}
 		}
 	}
 	.slick-prev,
@@ -131,18 +147,89 @@
 }
 .search-block{
 	padding: 36px 0;
-	background: $gray;
+	background-color: $gray;
+	background-image: url(#{$images}img-visual-relief.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+	@include media("<phone"){
+		padding: 90px 0 42px;
+	}
+	&__row{
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		@include media("<phone"){
+			flex-flow: row wrap;
+		}
+	}
+	&__col{
+		flex: 1 1 auto;
+		@include media("<phone"){
+			width: auto;
+			flex: 1 1 auto;
+		}
+	}
+	.h2{
+		text-align: left;
+		color: $white;
+		margin-bottom: 36px;
+		@include media("<phone"){
+			text-align: center;
+			margin-bottom: 30px;
+		}
+	}
+	.form_search{
+		min-width: 634px;
+		margin-right: 98px;
+		@include media("<tablet"){
+			min-width: auto;
+		}
+		@include media("<phone"){
+			margin-right: 0;
+		}
+	}
+	img{
+		display: block;
+		width: 376px;
+		@include media("<tablet"){
+			width: 196px;
+		}
+		@include media("<phone"){
+			width: 149px;
+			margin-top: 16px;
+		}
+	}
 }
 .services{
 	padding-bottom: 140px;
+	background: url(#{$images}img-services-bg.png) 100% 100% no-repeat;
+	background-size: auto;
+	@include media("<desktop"){
+		background: none;
+	}
+	@include media("<tablet"){
+		padding-bottom: 60px;
+	}
 	&__list{
-		margin: 0;
+		margin: 0 -15px;
 		padding: 0;
 		list-style: none;
 		display: flex;
+		justify-content: center;
 		&-item{
 			display: block;
-			width: 25%;
+			flex: 0 1 25%;
+			padding: 0 15px 30px;
+			@include media("<tablet"){
+				flex: 0 1 33.33333%;
+			}
+			@include media("<phone"){
+				flex: 0 1 50%;
+			}
+			@include media("<500px"){
+				flex: 1 1 auto;
+			}
 		}
 		&-img{
 			display: flex;
@@ -165,6 +252,9 @@
 			line-height: 20px;
 			text-align: center;
 			color: #5A5A5A;
+			@include media("<phone"){
+				font-size: 12px;
+			}
 			&:hover{
 				color: #5A5A5A;
 				box-shadow: 0px 0px 40px rgba(94, 93, 93, 0.1);
@@ -180,17 +270,87 @@
 }
 .documentation{
 	padding-bottom: 140px;
+	background: $alabaster;
+	@include media("<tablet"){
+		padding-bottom: 60px;
+	}
+	&__item{
+		position: relative;
+		display: block;
+		border-radius: 3px;
+		overflow: hidden;
+		&-link{
+			display: block;
+			padding-top: 68%;
+			transition: all .3s ease-in-out;
+			&:hover{
+				transform: scale(1.1);
+			}
+		}
+		&-title{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			padding: 25px;
+			background: rgba($gray, .7);
+			color: $white;
+			text-align: center;
+			font-weight: 700;
+			@include media("<phone"){
+				font-size: 14px;
+				padding: 14px;
+			}
+		}
+	}
 }
 .latest-news{
 	padding-bottom: 140px;
+	@include media("<tablet"){
+		padding-bottom: 60px;
+	}
 	&__btn{
 		padding-top: 10px;
 		text-align: center;
 	}
 }
 .subscribe{
-	padding: 90px 0;
-	background: $gray;
+	padding: 82px 0;
+	background: url(#{$images}img-subscribe-bg.jpg) 50% 50% no-repeat;
+	background-size: cover;
+	@include media("<tablet"){
+		padding: 140px 0;
+	}
+	&__row{
+		display: flex;
+		flex-flow: row wrap;
+		margin: 0 -15px;
+	}
+	&__col{
+		width: 50%;
+		padding: 0 15px;
+		@include media("<phone"){
+			width: auto;
+			flex: 1 1 auto;
+		}
+	}
+	.h2{
+		text-align: left;
+		color: $white;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		margin-bottom: 0;
+		@include media("<phone"){
+			text-align: center;
+			margin-bottom: 30px;
+		}
+	}
+	.form-group-check{
+		margin-top: 16px;
+	}
+	.form-group-agree{
+		color: $white;
+	}
 }
 
 .form_line{
@@ -209,7 +369,7 @@
 		font-size: 14px;
 		line-height: 20px;
 		font-weight: 500;
-		background-color: transparent;
+		background-color: $white;
 		border: 1px solid $white;
 		border-right: 0;
 		border-radius: 3px 0px 0px 3px;

@@ -45,7 +45,6 @@
 					</div>
 				</div>
 			</div>
-
 			<section class="why _padding">
 				<div class="container">
 					<h2 class="h2 _title">Why we?<span>Why we?</span></h2>
@@ -71,10 +70,18 @@
 			</section>
 			<div class="search-block">
 				<div class="container">
-					<form action="#" class="form form_line form_search">
-						<input type="text" class="form__control" placeholder="Product Name">
-						<input type="submit" class="btn btn_default" value="Search">
-					</form>
+					<div class="search-block__row">
+						<div class="search-block__col">
+							<h2 class="h2">Technical Product Information</h2>
+							<form action="#" class="form form_line form_search">
+								<input type="text" class="form__control" placeholder="Product Name">
+								<input type="submit" class="btn btn_default" value="Search">
+							</form>
+						</div>
+						<div class="search-block__col">
+							<img src="images/img-search-block.png" alt="image description">
+						</div>
+					</div>
 				</div>
 			</div>
 			<section class="services _padding">
@@ -123,6 +130,24 @@
 			<section class="documentation _padding">
 				<div class="container">
 					<h2 class="h2 _title">Documentation<span>Documentation</span></h2>
+					<div class="row">
+						<div class="col">
+							<a href="datasheets.html" class="documentation__item">
+								<div class="documentation__item-link img-to-bg">
+									<img src="images/img-documentation-01.jpg" alt="image description">
+								</div>
+								<strong class="documentation__item-title h3">Datasheets</strong>
+							</a>
+						</div>
+						<div class="col">
+							<a href="catalogue.html" class="documentation__item">
+								<div class="documentation__item-link img-to-bg">
+									<img src="images/img-documentation-02.jpg" alt="image description">
+								</div>
+								<strong class="documentation__item-title h3">Catalogue</strong>
+							</a>
+						</div>
+					</div>
 				</div>
 			</section>
 			<section class="latest-news _padding">
@@ -179,13 +204,61 @@
 			</section>
 			<section class="subscribe">
 				<div class="container">
-					<form action="#" class="form form_line form_subscribe">
-						<input type="text" class="form__control" placeholder="Enter your Email">
-						<input type="submit" class="btn btn_default" value="Subscribe">
-					</form>
+					<div class="subscribe__row">
+						<div class="subscribe__col">
+							<h2 class="h2">subscribe to the newsletter</h2>
+						</div>
+						<div class="subscribe__col">
+							<form action="#" class="form form_subscribe">
+								<div class="form_line">
+									<input type="text" class="form__control" placeholder="Enter your Email">
+									<input type="submit" class="btn btn_default" value="Subscribe">
+								</div>
+
+								<div class="form-group-check">
+									<input type="checkbox" class="form-group-checkbox" id="privacy" name="agree">
+									<label for="privacy" class="form-group-privacy">
+										<p class="form-group-agree">I agree to Terms & Conditions</p>
+									</label>
+								</div>
+							</form>
+							
+						</div>
+					</div>
 				</div>
 			</section>
-			
+			<form class="form-group">
+				<h2 class="h2 account-heading">Join Eventamigos</h2>
+				<div class="form-group__control">
+					<div class="form__box">
+						<input type="text" placeholder="First name" class="form__control" name="firstname" id="firstname" minlength="2" required>
+					</div>
+					<div class="form__box">
+						<input type="text" placeholder="Last name" class="form__control" name="lastname" id="lastname" minlength="2" required>
+					</div>
+					<div class="form__box">
+						<input type="text" name="birthday" placeholder="Date of birthday" class="form__control">
+					</div>
+					<div class="form__box">
+						<input type="email" name="email" placeholder="E-mail" class="form__control">
+					</div>
+					<div class="form__box password">
+						<input type="password" name="password" placeholder="Password" class="form__control" id="password">
+						<span class="password__view"></span>
+					</div>
+					<div class="form__box password">
+						<input type="password" placeholder="Repeated password" class="form__control" id="password_again" name="password_again">
+						<span class="password__view"></span>
+					</div>
+					<div class="form-group-check">
+						<input type="checkbox" class="form-group-checkbox" id="privacy2" name="agree">
+						<label for="privacy2" class="form-group-privacy">
+							<p class="form-group-agree">I agree to the and the strong</p>
+						</label>
+					</div>
+				</div>
+				<button type="submit" class="btn btn_default">Create your account</button>
+			</form>
 		</div>
 		//= inc/_footer.html
 	</div><!-- / wrapper -->
@@ -193,6 +266,8 @@
 	<noscript>Detected missing Javascript support. Certain website features will not operate correctly with Javascript disabled.</noscript>
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/slick.min.js"></script>
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/jquery.fancybox.min.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>

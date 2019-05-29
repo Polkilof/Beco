@@ -182,6 +182,9 @@ table{border-collapse: collapse;}
 }
 ._padding{
 	padding: 180px 0 30px;
+	@include media("<tablet"){
+		padding: 60px 0;
+	}
 }
 
 /*typography*/
@@ -207,7 +210,10 @@ h2, .h2{
 	margin: 0 0 60px;
 	@include media("<desktop"){}
 	@include media("<tablet"){}
-	@include media("<phone"){}
+	@include media("<phone"){
+		font-size: 24px;
+		margin-bottom: 40px;
+	}
 	&._title{
 		position: relative;
 		z-index: 0;
@@ -226,6 +232,12 @@ h2, .h2{
 			opacity: 0.03;
 			white-space: nowrap;
 			z-index: -1;
+			@include media("<desktop_lg"){
+				font-size: 100px;
+			}
+			@include media("<tablet"){
+				display: none;
+			}
 		}
 	}
 }
@@ -239,7 +251,9 @@ h3, .h3{
 	margin: 0 0 0;
 	@include media("<desktop"){}
 	@include media("<tablet"){}
-	@include media("<phone"){}
+	@include media("<phone"){
+		font-size: 18px;
+	}
 	&._center{
 		text-align: center;
 	}
@@ -262,6 +276,22 @@ h4, .h4{
 p{margin: $paragraph-spacing;}
 /*end typography*/
 /* styles end */
+.row{
+	display: flex;
+	flex-flow: row wrap;
+	margin: 0 -15px;
+	@include media("<phone"){
+		flex-flow: column;
+	}
+	.col{
+		padding: 0 15px;
+		flex: 1 1 50%;
+		@include media("<phone"){
+			flex: 1 1 auto;
+			padding: 15px;
+		}
+	}
+}
 
 @include media("<desktop_lg"){}
 @include media("<desktop"){}
