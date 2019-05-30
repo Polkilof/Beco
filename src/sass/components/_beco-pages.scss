@@ -5,11 +5,21 @@
 		list-style: none;
 		display: flex;
 		flex-wrap: wrap;
+		@include media("<phone"){
+			margin: 0 -10px;
+		}
 	}
 	&__item{
 		width: 33.333%;
-		padding: 30px 15px;
-		
+		padding: 0 15px;
+		margin-bottom: 40px;
+		@include media("<tablet"){
+			width: 50%;
+		}
+		@include media("<phone"){
+			width: 100%;
+			padding: 0;
+		}
 	}
 	&__box-img{
 		display: block;
@@ -28,11 +38,13 @@
 	}
 	&__content{
 		padding: 0 30px;
-		padding: 0 30px;
 		flex: 0 1 100%;
 		justify-content: space-between;
 		display: flex;
 		flex-direction: column;
+		@include media("<tablet"){
+			padding: 0 10px;
+		}
 	}
 	&__list-title{
 		display: block;
@@ -49,7 +61,17 @@
 		flex:0 1 100%;
 		&-desct{
 			font-size: 18px;
-			line-height: 34px;
+			line-height: 32px;
+			@include media("<phone"){
+				font-size: 14px;
+				line-height: 25px;
+				margin-bottom: 15px;
+			}
+		}
+		@include media("<phone"){
+			font-size: 12px;
+			line-height: 20px;
+			margin-bottom: 20px;
 		}
 	}
 	&__more{
@@ -77,8 +99,11 @@
 	&__img-block{
 		display: block;
 		margin-bottom: 60px;
+		@include media("<phone"){
+			margin: 0 -10px 30px;
+		}
 	}
-	&__image{
+	&__images{
 		display: block;
 		max-width: 100%;
 		max-height: 100%;
@@ -86,7 +111,7 @@
 	}
 	&__text-desct-block{
 		display: block;
-		margin-bottom: 60px;
+		margin-bottom: 50px;
 	}
 }
 .social{
@@ -108,9 +133,32 @@
 	&__link{
 		display: block;
 		width: 35px;
+		transition: all .25s;
 		svg{
 			display: block;
 			width: 100%;
+			fill: #212121;
+			transition: all .25s;
+			max-width: 36px;
+			max-height: 36px;
+		}
+		&_inst{
+			svg{
+				stroke: #212121;
+				stroke-width: .5;
+			}
+		}
+		&:hover{
+			svg{
+				fill: $orange;
+				stroke: $orange;
+				stroke-width: 1;
+				-webkit-transform: scale(1.2);
+			    transform: scale(1.2);
+			    transition: background .25s,fill .25s,-webkit-transform .25s ease-out;
+			    transition: background .25s,transform .25s ease-out,fill .25s;
+			    transition: background .25s,transform .25s ease-out,fill .25s,-webkit-transform .25s ease-out;
+			}
 		}
 	}
 }
@@ -123,7 +171,7 @@
 	&__item{
 		border: 1px solid $mercury;
 		border-top:0;
-		padding: 20px;
+		padding: 20px 10px;
 		&:first-child{
 			border-top: 1px solid $mercury;
 		}
@@ -132,12 +180,18 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		@include media("<phone"){
+			flex-direction: column;
+		}
 	}
 	&__descr{
 		font-size: 18px;
 		line-height: 25px;
 		letter-spacing: 0.05px;
 		font-weight: bold;
+		@include media("<phone"){
+			margin-bottom: 16px;
+		}
 	}
 	&__link{
 		display: inline-block;
@@ -230,6 +284,10 @@
 			color: $blackcurrant;
 			font-weight: 300;
 			font-style: normal;
+			@include media("<phone"){
+				font-size: 12px;
+				line-height: 20px;
+			}
 		}
 		dd p{
 			margin: 0 0 30px;
@@ -267,6 +325,9 @@
 		&:last-child{
 			margin-right: -0px;
 		}
+		@include media("<phone"){
+			margin-right: 10px;
+		}
 	}
 	.tabs-caption li.active{
 		background: $orange;
@@ -293,7 +354,7 @@
 }
 .products{
 	&__list{
-		margin: 0;
+		margin: 0 -25px;
 		padding: 0;
 		list-style: none;
 		display: flex;
@@ -303,7 +364,13 @@
 	&__item{
 		width: 25%;
 		padding: 0 25px;
-		margin-bottom: 40px;
+		margin-bottom: 30px;
+		@include media("<tablet"){
+			width: 50%;
+		}
+		@include media("<phone"){
+			width: 100%;
+		}
 	}
 	&__content{
 		display: flex;
@@ -348,7 +415,12 @@
 		text-align: center;
 		max-width: 790px;
 		margin:0 auto;
-		margin-bottom: 90px;
+		margin-bottom: 85px;
+		@include media("<phone"){
+			font-size: 14px;
+			line-height: 21px;
+			bottom: 60px;
+		}
 	}
 	&__map-img-block{
 		background: url(#{$images}about-img-block.jpg) 50% 50% no-repeat;
@@ -360,19 +432,36 @@
 .facts{
 	background: $alabaster;
 	padding: 90px 0;
-	margin-bottom: 90px;
+	margin-bottom: 81px;
+	@include media("<phone"){
+		padding: 60px 0;
+	}
+	&__title{
+		margin: 0 0 49px;
+	}
 	&__list{
-		margin: 0;
+		margin: 0 -25px;
 		padding: 0;
 		list-style: none;
 		display: flex;
 		flex-wrap: wrap;
+		@include media("<phone"){
+			margin: 0;
+		}
 	}
 	&__item{
 		width: 25%;
 		padding: 0 15px;
 		display: flex;
 		justify-content: center;
+		@include media("<phone"){
+			width: 100%;
+			padding: 0;
+			margin-bottom: 40px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
 	}
 	&__content{
 		padding-top: 80px;
@@ -400,10 +489,21 @@
 		list-style: none;
 		display: flex;
 		flex-wrap: wrap;
+		align-items: flex-start;
+		@include media("<phone"){
+			margin: 0 -10px;
+		}
 	}
 	&__item{
 		width: 33.333%;
 		padding: 0 15px;
+		@include media("<tablet"){
+			width: 50%;
+		}
+		@include media("<phone"){
+			width: 100%;
+			padding: 0;
+		}
 	}
 	&__content{
 		display: flex;
@@ -420,6 +520,9 @@
 		width: 100%;
 		padding-bottom: 88%;
 		margin-bottom: 24px;
+		@include media("<phone"){
+			
+		}
 	}
 	&__img{
 		position: absolute;
@@ -431,6 +534,9 @@
 	}
 	&__text{
 		padding: 0 30px 40px;
+		@include media("<phone"){
+			padding: 0 15px 40px;
+		}
 	}
 	&__title{
 		display: block;
@@ -450,6 +556,9 @@
 	&__box-img{
 		display: block;
 		margin-bottom:50px;
+		@include media("<phone"){
+			margin-bottom: 36px;
+		}
 	}
 	&__images{
 		display: block;
@@ -465,6 +574,14 @@
 		list-style: none;
 		max-width: 255px;
 		margin-right: 30px;
+		@include media("<tablet"){
+			margin-right: 15px;
+			max-width: 220px;
+		}
+		@include media("<phone"){
+			max-width: 300px;
+			margin-bottom: 40px;
+		}
 	}
 	&__item{
 		display: inline-block;
@@ -472,6 +589,12 @@
 		min-width: 255px;
 		+ .filter__item{
 			margin-top: -1px;
+		}
+		@include media("<tablet"){
+			min-width: 170px;
+		}
+		@include media("<phone"){
+			min-width: 100%;
 		}
 	}
 	&__link{
@@ -500,6 +623,11 @@
 	&__flex-container{
 		display: flex;
 		align-items: flex-start;
+		@include media("<phone"){
+			flex-direction: column;
+			align-items: center;
+		}
+
 	}
 	&__items{
 		width: 100%;
@@ -515,6 +643,12 @@
 		width: 33.333%;
 		padding: 0 15px;
 		margin-bottom: 30px;
+		@include media("<phone"){
+			width: 50%;
+		}
+		@include media("<550px"){
+			width: 100%;
+		}
 	}
 	&__link{
 		display: flex;
@@ -556,10 +690,20 @@
 		list-style: none;
 		display: flex;
 		flex-wrap: wrap;
+		@include media("<550px"){
+			margin: 0;
+		}
 	}
 	&__item{
 		width: 25%;
 		padding: 0 15px;
+		@include media("<phone"){
+			width: 50%;
+		}
+		@include media("<550px"){
+			width: 100%;
+			padding: 0;
+		}
 	}
 	&__link{
 		display: block;
@@ -572,7 +716,7 @@
 		display: block;
 		position: relative;
 		width: 100%;
-		padding-bottom: 100%;
+		padding-bottom: 86%;
 	}
 	&__img{
 		position: absolute;
@@ -595,6 +739,9 @@
 	.search{
 		display: block;
 		margin-bottom: 80px;
+		@include media("<phone"){
+			margin-bottom: 40px;
+		}
 		.form_line{
 			max-width: 444px;
 			margin: 0 0 0 auto;
@@ -646,6 +793,10 @@
 		.title{
 			font-size: 18px;
 			line-height: 25px;
+			@include media("<phone"){
+				font-size: 12px;
+				line-height: 16px;
+			}
 		}
 		.box-link{
 			display: flex;
@@ -654,15 +805,43 @@
 			display: block;
 			max-width: 20px;
 			max-height: 25px;
+			@include media("<phone"){
+				max-width: 9px;
+				max-height: 12px;
+			}
 			svg{
+				display: block;
 				fill: #cecece;
 				transition: all .3s;
+				@include media("<phone"){
+					max-width: 9px;
+					max-height: 12px;
+					margin: 2px 0 0;
+				}
 			}
 			&:hover{
 				svg{
 					fill: $orange;
 				}
 			}
+		}
+		.descr{
+			display: flex;
+			align-items: center;
+		}
+		.link-info{
+			display: none;
+			@include media("<phone"){
+				display: block;
+				margin-left: 10px;
+			}
+		}
+		.info{
+			display: block;
+			background: url(../images/info.svg) 50% 50% no-repeat;
+			background-size: 100% auto;
+			width: 12px;
+			height: 12px;
 		}
 		.details{
 			font-size: 14px;
@@ -671,6 +850,11 @@
 			text-decoration: underline;
 			margin-left: 90px;
 			transition: all .3s;
+			@include media("<phone"){
+				margin-left: 20px;
+				font-size: 10px;
+				line-height: 14px;
+			}
 		}
 		dl{
 			margin: 0;
@@ -686,6 +870,9 @@
 			margin: 0;
 			cursor: pointer;
 			border-bottom: 0;
+			@include media("<phone"){
+				padding: 9px 16px;
+			}
 		}
 		dt.active{
 			.details{
@@ -722,6 +909,10 @@
 			color: $blackcurrant;
 			font-weight: 300;
 			font-style: normal;
+			@include media("<phone"){
+				padding: 10px 30px;
+
+			}
 		}
 		dd p{
 			margin: 0 0 30px;
@@ -731,10 +922,14 @@
 		}
 		dd .content{
 			&__list{
-				margin: 0;
+				margin: 0 0 40px;
 				padding: 0;
 				list-style: none;
 				column-count: 2;
+				@include media("<phone"){
+					column-count: 1;
+					margin: 0 0 20px;
+				}
 			}
 			&__item{
 				display: flex;
@@ -746,6 +941,10 @@
 				font-size: 18px;
 				line-height: 25px;
 				color: $scorpion;
+				@include media("<phone"){
+					font-size: 10px;
+					line-height: 14px;
+				}
 			}
 			&__sense{
 				min-width: 70px;
@@ -753,7 +952,33 @@
 				color: $scorpion;
 				font-size: 18px;
 				line-height: 25px;
+				@include media("<phone"){
+					font-size: 10px;
+					line-height: 14px;
+				}
 			}
+			&__paragraph{
+				max-width: 320px;
+				font-size: 10px;
+				line-height: 17px;
+				@include media("<phone"){
+					line-height: 14px;
+					margin-bottom: 15px;
+					max-width: 100%;
+				}
+			}
+			.close{
+				display: none;
+				background: url(../images/close.svg) 50% 35% no-repeat;
+				background-size: 30px auto;
+				padding: 25px 0;
+				@include media("<phone"){
+					display: block;
+					background-size: 20px auto;
+					padding: 15px 0;
+				}
+			}
+
 		}
 	}
 }

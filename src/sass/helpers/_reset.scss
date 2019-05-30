@@ -116,6 +116,9 @@ table{border-collapse: collapse;}
 	&.home{
 		padding-top: 0;
 	}
+	@include media("<tablet"){
+		padding-top: 62px;
+	}
 }
 .page{
 	display: flex;
