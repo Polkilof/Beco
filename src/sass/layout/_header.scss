@@ -8,13 +8,20 @@
 	z-index: 200;
 	background: $gray_cod;
 	padding: 26px 0 21px;
+	transition: background .2s ease-in-out;
 	@include media("<tablet"){
 		padding: 5px 0;
+	}
+	&.scrolled{
+		background: $gray_cod;
 	}
 }
 .home{
 	.header-page{
-		background: linear-gradient(180deg, #1A1919 13.26%, #1A1919 28.73%, rgba(26, 25, 25, 0.3) 77.9%, rgba(26, 25, 25, 0) 100%);;
+		background: linear-gradient(180deg, #1A1919 13.26%, #1A1919 28.73%, rgba(26, 25, 25, 0.3) 77.9%, rgba(26, 25, 25, 0) 100%);
+		&.scrolled{
+			background: $gray_cod;
+		}
 	}
 }
 .logo{

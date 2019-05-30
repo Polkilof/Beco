@@ -20,37 +20,18 @@
 		position: relative;
 		display: block;
 		z-index: 1;
-		margin-bottom: 16px;
+		margin-bottom: 24px;
 		@include media("<phone"){
-			margin-bottom: 12px;
-		}
-		&:after{
-			content: "";
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			left: 0;
-			height: 2px;
-			border-radius: 0 0 3px 3px;
-			background: transparent;
-			transform: scale(0);
-			transition: transform .2s;
-		}
-		&.novalidate{
-			&:after{
-				display: none !important;
-			}
+			margin-bottom: 16px;
 		}
 		&_valid{
-			&:after{
-				background: #28CD6A;
-				transform: scale(1);
+			.form__control{
+				border-color: #28CD6A;
 			}
 		}
 		&_error{
-			&:after{
-				background: #FC4B4E;
-				transform: scale(1);
+			.form__control{
+				border-color: #FC4B4E;
 			}
 		}
 		&.input--filled{
@@ -65,6 +46,23 @@
 		}
 		&.mb0{
 			margin-bottom: 0;
+		}
+		&-container{
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-between;
+			align-items: flex-start;
+			@include media("<phone"){
+				justify-content: flex-start;
+				align-items: center;
+				flex-flow: column;
+			}
+			.form-group-check{
+				max-width: 254px;
+				@include media("<phone"){
+					margin: 0 auto 24px;
+				}
+			}
 		}
 	}
 	&__label{
@@ -149,15 +147,12 @@ textarea.form__control{
 
 .form-group{
 	position: relative;
-	/* max-width: 330px;
-	min-width: 280px;
-	width: 100%; */
 	margin: 0 auto;
 	&__control{
 		width: 100%;
-		margin-bottom: 32px;
+		margin-bottom: 24px;
 		@include media('<phone'){
-			margin-bottom: 24px;
+			margin-bottom: 16px;
 		}
 	}
 	&-check{
@@ -236,5 +231,46 @@ textarea.form__control{
 	.password__view{
 		opacity: 1;
 		visibility: visible;
+	}
+}
+
+.regular-row{
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	margin-bottom: 65px;
+	&_inputfields{
+		justify-content: space-between;
+		margin: 0 -15px;
+		@include media('<tablet'){
+			margin: 0 -10px;
+		}
+		@include media('<phone'){
+			margin: 0;
+			flex-wrap: wrap;
+		}
+		.form__box{
+			flex-basis: 100%;
+			padding: 0 15px 30px;
+			margin: 0;
+			@include media('<tablet'){
+				padding: 0 10px 20px;
+			}
+			@include media('<phone'){
+				padding: 0 0 16px;
+			}
+			&_group{
+				flex-basis: 49.3%;
+				@include media('<phone'){
+					flex-basis: 100%;
+				}
+				.form-group-check{
+					margin-bottom: 16px;
+					@include media('<phone'){
+						margin-bottom: 16px;
+					}
+				}
+			}
+		}
 	}
 }

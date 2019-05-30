@@ -5,6 +5,7 @@ function initPage(){
 	dropdownToggle();
 	accordeon();
 	tabs();
+	headerFixedClass();
 	initSlider();
 	filter();
 	validateFields();
@@ -96,6 +97,14 @@ function dropdownToggle(){
 				container.removeClass('open');
 			}
 		}
+	});
+}
+
+function headerFixedClass(){
+	var heightEl  = 0;
+	$(window).scrollTop() > heightEl ? $('.header-page').addClass('scrolled') : $('.header-page').removeClass('scrolled');
+	$(window).scroll(function(){
+		$(window).scrollTop() > heightEl ? $('.header-page').addClass('scrolled') : $('.header-page').removeClass('scrolled');
 	});
 }
 
@@ -196,17 +205,16 @@ function validateFields(){
 
 function mapInitialize(map_) {
 	var latlng = new google.maps.LatLng(48.98021699, 18.17138672);
-	var Markerlatlng = new google.maps.LatLng(51.5149042, 0.1235499);
 	var myOptions = {
 		center: latlng,
 		zoom: 5,
-		scrollwheel: false,
 		zoomControl: true,
-		mapTypeControl: false,
-		scaleControl: false,
-		streetViewControl: false,
-		rotateControl: false,
-		disableDoubleClickZoom: true
+		scaleControl: true,
+		//scrollwheel: true,
+		//mapTypeControl: false,
+		//streetViewControl: false,
+		//rotateControl: false,
+		//disableDoubleClickZoom: true
 	};
 	var map = new google.maps.Map(document.getElementById(map_), myOptions);
 	var stylesBW = [
@@ -218,17 +226,31 @@ function mapInitialize(map_) {
 		}
 	];
 	map.setOptions({styles: stylesBW});
-	var marker = new google.maps.Marker({
-		position: Markerlatlng,
-		icon: '../images/ico-marker.png',
-		map: map
-	});
+	function addMarker(feature) {
+		var marker = new google.maps.Marker({
+			position: feature.position,
+			icon: '../images/ico-marker.png',
+			map: map
+		});
+	}
+	var features = [
+		{
+			position: new google.maps.LatLng(49.98696603, 36.23341978)
+		},
+		{
+			position: new google.maps.LatLng(49.19396603, 36.95641978)
+		},
+		{
+			position: new google.maps.LatLng(49.50396603, 36.45641978)
+		},
+		{
+			position: new google.maps.LatLng(49.12396603, 36.42341978)
+		}
+	];
 
-	new google.maps.Marker({
-		position: new google.maps.LatLng(49.98696603, 36.23341978),
-		icon: '../images/ico-marker.png',
-		map: map
-	})
+	for (var i = 0, feature; feature = features[i]; i++) {
+		addMarker(feature);
+	}
 }
 $('#map').each(function(){
 	var map_ = $(this).attr('id');

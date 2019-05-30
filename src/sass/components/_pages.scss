@@ -557,6 +557,19 @@
 }
 
 .contact{
+	background: url(#{$images}img-contact-bg-01.png) 100% 10% no-repeat;
+	background-size: auto;
+	@include media("<desktop"){
+		background: none;
+	}
+	background: url(#{$images}img-contact-bg-02.png) 0% 50% no-repeat;
+	background-size: auto;
+	@include media("<desktop"){
+		background: none;
+	}
+	&__wrap{
+		margin-bottom: 80px;
+	}
 	.row{
 		display: flex;
 		flex-flow: row wrap;
@@ -568,9 +581,15 @@
 		.col{
 			flex: 1 1 25%;
 			padding: 0 15px 30px;
+			@include media("<tablet"){
+				flex: 1 1 50%;
+			}
 		}
 		.h3{
 			margin-bottom: 60px;
+			@include media("<phone"){
+				margin-bottom: 30px;
+			}
 		}
 	}
 	.footer-links{
@@ -611,7 +630,48 @@
 			}
 		}
 	}
-
+	&__form{
+		margin: 90px 0 0;
+		padding: 60px 0;
+		background: #FBFBFB;
+	}
+	.social__link{
+		svg.facebook{
+			path{
+				fill: #475993;
+				transition: all .2s ease;
+			}
+		}
+		svg.twitter{
+			path{
+				fill: #55ACEE;
+				transition: all .2s ease;
+			}
+		}
+		svg.youtube{
+			path{
+				fill: #D22215;
+				transition: all .2s ease;
+			}
+		}
+		&:hover{
+			svg.facebook{
+				path{
+					fill: darken(#475993,10%);
+				}
+			}
+			svg.twitter{
+				path{
+					fill: darken(#55ACEE,10%);
+				}
+			}
+			svg.youtube{
+				path{
+					fill: darken(#D22215,10%);
+				}
+			}
+		}
+	}
 }
 .map{
 	display: block;

@@ -293,6 +293,43 @@ p{margin: $paragraph-spacing;}
 	}
 }
 
+
+.modal{
+	position: relative;
+	display: none;
+	width:100%;
+	max-width:600px;
+	margin: 0 auto;
+	padding: 40px 30px;
+	&__holder{
+		position: relative;
+		padding: 20px 0;
+		text-align: center;
+		@include media("<phone"){
+			padding: 0;
+		}
+	}
+	&__title{
+		margin-bottom: 40px;
+		@include media("<phone"){
+			margin-bottom: 32px;
+		}
+	}
+	&__text{
+		margin-bottom: 40px;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 24px;
+		@include media("<phone"){
+			font-size: 12px;
+			line-height: 20px;
+			margin-bottom: 24px;
+		}
+	}
+}
+
+
+
 @include media("<desktop_lg"){}
 @include media("<desktop"){}
 @include media("<tablet"){}

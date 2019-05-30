@@ -19,6 +19,10 @@
 		padding: 8px 15px;
 		min-width: 120px;
 	}
+	&_lg{
+		width: 100%;
+		padding: 18px;
+	}
 	&.active:focus,
 	&.active:hover,
 	&:focus,
