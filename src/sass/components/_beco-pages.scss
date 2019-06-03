@@ -1,4 +1,14 @@
 .news{
+	background: url(../images/news-bg.png) 0 10% no-repeat;
+	@include media("<1399px"){
+		background: none;
+	}
+	&_desct{
+		background: url(../images/news-desct-bg.png) 0 40% no-repeat;
+		@include media("<1399px"){
+			background: none;
+		}
+	}
 	&__list{
 		margin: 0 -15px;
 		padding: 0;
@@ -163,6 +173,10 @@
 	}
 }
 .datasheets{
+	background: url(../images/datasheets-bg.png) 100% 40% no-repeat;
+	@include media("<1399px"){
+		background: none;
+	}
 	&__list{
 		margin: 0 0 30px;
 		padding: 0;
@@ -223,6 +237,10 @@
 }
 
 .faq{
+	background: url(../images/faq-bg.png) 100% 30% no-repeat;
+	@include media("<1399px"){
+		background: none;
+	}
 	.accordeon{
 		dl{
 			margin: 0;
@@ -298,7 +316,8 @@
 		dd .content{}
 	}
 }
-.prosucts{
+.products{
+	
 	.tabs-caption{
 		margin: 0;
 		padding: 0;
@@ -353,6 +372,10 @@
 	}
 }
 .products{
+	background: url(../images/product-bg.png) 0 120px no-repeat;
+	@include media("<1399px"){
+		background: none;
+	}
 	&__list{
 		margin: 0 -25px;
 		padding: 0;
@@ -411,6 +434,10 @@
 	}
 }
 .about{
+	background: url(../images/about-bg.png) 100% 20% no-repeat;
+	@include media("<1399px"){
+		background: none;
+	}
 	&__paragraph{
 		display: block;
 		font-size: 18px;
@@ -486,6 +513,10 @@
 	}
 }
 .services{
+	background: url(../images/service-bg.png) 0 10% no-repeat;
+	@include media("<1399px"){
+		background: none;
+	}
 	&__list{
 		margin: 0 -15px;
 		padding: 0;
@@ -556,6 +587,10 @@
 	}
 }
 .title{
+	background: url(../images/title-bg.png) 0 60% no-repeat;
+	@include media("<1399px"){
+		background: none;
+	}
 	&__box-img{
 		display: block;
 		margin-bottom:50px;
@@ -623,6 +658,10 @@
 	}
 }
 .components{
+	background: url(../images/components-bg.png) 0 60% no-repeat;
+	@include media("<1399px"){
+		background: none;
+	}
 	&__flex-container{
 		display: flex;
 		align-items: flex-start;
@@ -687,6 +726,10 @@
 	}
 }
 .catalogue{
+	background: url(../images/catalog-bg.png) 0 200px no-repeat;
+	@include media("<1399px"){
+		background: none;
+	}
 	&__list{
 		margin: 0 -15px;
 		padding: 0;
