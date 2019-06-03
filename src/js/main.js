@@ -51,24 +51,6 @@ function mobileMenu(){
 	});
 }
 
-function pageScrollTop() {
-	$(window).scroll(function(){
-		if ($(this).scrollTop() > 100) {
-			$('.btn-page-up').fadeIn();
-		} else {
-			$('.btn-page-up').fadeOut();
-		}
-	});
-	$('.btn-page-up').click(function(e){
-		var offsetTop = $('body').offset().top;
-		$('html, body').stop().animate({ 
-			scrollTop: offsetTop
-		}, 500);
-		e.preventDefault();
-	});
-}
-
-
 function accordeon(){
 	$(".accordeon dd").hide().prev().click(function() {
 		$(this).parents(".accordeon").find("dd").not(this).slideUp().prev().removeClass("active");
