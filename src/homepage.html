@@ -25,25 +25,32 @@
 	<div class="wrapper home">
 		<div class="page">
 			//= inc/_header.html
-			<div class="visual img-to-bg">
-				<img src="images/img-visual.png" alt="image description">
-				<div class="container">
-					<div class="visual__slider">
-						<section class="visual__slider-item">
+			<div class="visual">
+				<div class="visual__slider">
+					<section class="visual__slider-item  img-to-bg">
+						<img src="images/img-visual.png" alt="image description">
+						<div class="container">
 							<div class="visual__slider-content">
 								<h1 class="h1 visual__slider-title">Great products start from real problems</h1>
 								<p class="visual__slider-text">This book helps you look at the whole product picture from the point of view of your customers. For anybody looking for a powerful framework to guide your product building, this is it.</p>
 								<a href="#" class="btn btn_default">Learn More</a>
 							</div>
-						</section>
-						<section class="visual__slider-item">
+						</div>
+					</section>
+					<section class="visual__slider-item  img-to-bg">
+						<img src="images/img-visual.png" alt="image description">
+						<div class="container">
 							<div class="visual__slider-content">
 								<h1 class="h1 visual__slider-title">Great products</h1>
 								<p class="visual__slider-text">This book helps you look at the whole product picture from the point of view of your customers.</p>
 								<a href="#" class="btn btn_default">Learn More</a>
 							</div>
-						</section>
-					</div>
+						</div>
+					</section>
+				</div>
+				<div class="container">
+					<a href="#" class="slick-prev slick-arrow">prev</a>
+					<a href="#" class="slick-next slick-arrow">next</a>
 				</div>
 			</div>
 			<section class="why _padding">
@@ -210,16 +217,16 @@
 							<h2 class="h2">subscribe to the newsletter</h2>
 						</div>
 						<div class="subscribe__col">
-							<form action="#" class="form form_subscribe">
-								<div class="form_line">
-									<input type="text" class="form__control" placeholder="Enter your Email">
-									<input data-fancybox="subscribe" data-src="#subscribe" type="submit" class="btn btn_default" value="Subscribe">
+							<form action="#" class="form form_subscribe _validate">
+								<div class="form__box form_line">
+									<input type="text" class="form__control" name="email"  placeholder="Enter your Email">
+									<input data-fancybox="subscribe" data-src="#subscribe" type="submit" class="btn btn_default form-group-button-dis btn-disable" disabled value="Subscribe">
 								</div>
 
 								<div class="form-group-check">
-									<input type="checkbox" class="form-group-checkbox" id="privacy" name="agree">
-									<label for="privacy" class="form-group-privacy">
-										<p class="form-group-agree">I agree to Terms & Conditions</p>
+									<input type="checkbox" class="form-group-checkbox" id="privacy1" name="agree">
+									<label for="privacy1" class="form-group-privacy">
+										<p class="form-group-agree">I agree to <a href="#">Terms & Conditions</a></p>
 									</label>
 								</div>
 							</form>
@@ -232,7 +239,6 @@
 		//= inc/_footer.html
 	</div><!-- / wrapper -->
 	
-	//= inc/_modal.html
 	//= inc/_modal.html
 	//= inc/_scripts.html
 </body>

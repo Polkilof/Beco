@@ -57,6 +57,9 @@
 			line-height: 16px;
 			color: $white;
 			text-transform: uppercase;
+			&:hover{
+				color: $white;
+			}
 		}
 		&-ico{
 			display: flex;

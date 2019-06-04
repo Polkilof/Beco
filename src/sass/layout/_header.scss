@@ -45,21 +45,6 @@
 	}
 }
 
-.tagline{
-	position: absolute;
-	top: 26px;
-	left: 50%;
-	transform: translateX(-50%);
-	font-weight: 300;
-	font-size: 12px;
-	line-height: 16px;
-	letter-spacing: 0.2em;
-	text-transform: uppercase;
-	@include media("<tablet"){
-		display: none;
-	}
-}
-
 .open-menu{
 	width: 40px;
 	height: 32px;

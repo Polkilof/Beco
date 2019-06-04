@@ -9,8 +9,13 @@ function initPage(){
 	initSlider();
 	filter();
 	validateFields();
+	enableClick();
 
-	$('[data-fancybox="gallery"]').fancybox({});
+	$('[data-fancybox]').fancybox({
+		onInit: function(instance, slide){
+			validateFields();
+		}
+	});
 }
 
 function filter(){
@@ -100,7 +105,16 @@ function initSlider(){
 		infinite: true,
 		autoplay: true,
 		autoplaySpeed: 3000,
-		fade: true
+		//fade: true
+	});
+	$('.visual .slick-prev').click(function(){
+		slider.slick('slickPrev');
+		return false;
+	});
+
+	$('.visual .slick-next').click(function(){
+		slider.slick('slickNext');
+		return false;
 	});
 	var resizeTimer;
 	$(window).on('resize', function(e) {
@@ -133,12 +147,12 @@ function validateFields(){
 				myEmail: true,
 			},
 			phone: {
-				required: true,
-				myPhone: true,
+				required: false,
+				myPhone: false,
 			},
 			message: {
-				required: true,
-				minlength: 2,
+				required: false,
+				minlength: 0,
 			}
 		},
 		messages: {
@@ -183,6 +197,18 @@ function validateFields(){
 			return value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 		}
 	);
+}
+function enableClick(){
+	$('.form-group-check').on('click', function(){
+		var check = $(this).find('input').prop("checked");
+		if ( check == true ){
+			$('.form-group-button-dis, .form-group-button').removeClass('btn-disable');
+			$('.form-group-button-dis, .form-group-button').prop('disabled',false);
+		} else {
+			$('.form-group-button-dis, .form-group-button').addClass('btn-disable');
+			$('.form-group-button-dis, .form-group-button').prop('disabled',true);
+		}
+	});
 }
 
 function mapInitialize(map_) {

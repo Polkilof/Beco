@@ -26,17 +26,17 @@
 		}
 		&_valid{
 			.form__control{
-				border-color: #28CD6A;
+				border-color: #28CD6A !important;
 			}
 		}
 		&_error{
 			.form__control{
-				border-color: #FC4B4E;
+				border-color: #FC4B4E !important;
 			}
 		}
 		&.input--filled{
 			.form__control{
-				border: 1px solid #EEECEC;
+				border: 1px solid #EEECEC !important;
 			}
 		}
 		&.password{
@@ -204,6 +204,12 @@ textarea.form__control{
 		font-weight: 400;
 		color: $gray;
 		margin-bottom: 0;
+		> a{
+			color: $white;
+			&:hover{
+				color: $orange;
+			}
+		}
 	}
 }
 .password__view{
@@ -273,4 +279,9 @@ textarea.form__control{
 			}
 		}
 	}
+}
+
+.form-group-button-dis.btn-disable{
+	opacity: 0.7;
+	pointer-events: none;
 }

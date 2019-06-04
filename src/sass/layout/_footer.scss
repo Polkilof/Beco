@@ -58,6 +58,11 @@
 		&:last-child{
 			margin-bottom: 0;
 		}
+		address.footer-links__link_contact{
+			&:hover{
+				color: $gray;
+			}
+		}
 	}
 	&__link{
 		display: inline-block;
@@ -65,7 +70,7 @@
 		color: $gray;
 		transition: color .2s;
 		&:hover{
-			color: $gray_cod;
+			color: $orange;
 		}
 		&_contact{
 			position: relative;
