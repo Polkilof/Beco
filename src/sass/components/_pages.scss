@@ -773,7 +773,7 @@
 		display: block;
 		font-size: 18px;
 		line-height: 25px;
-		font-weight: bold;
+		font-weight: 700;
 		text-align: left;
 		margin:0 0 24px;
 	}
@@ -781,7 +781,12 @@
 		font-size: 14px;
 		line-height: 23px;
 		margin-bottom: 30px;
-		flex:0 1 100%;
+		flex: 0 1 100%;
+		@include media("<phone"){
+			font-size: 14px;
+			line-height: 22px;
+			margin-bottom: 20px;
+		}
 		&-desct{
 			font-size: 18px;
 			line-height: 32px;
@@ -791,17 +796,12 @@
 				margin-bottom: 15px;
 			}
 		}
-		@include media("<phone"){
-			font-size: 12px;
-			line-height: 20px;
-			margin-bottom: 20px;
-		}
 	}
 	&__more{
 		display: block;
 		font-size: 12px;
 		line-height: 20px;
-		font-weight: bold;
+		font-weight: 700;
 		margin-bottom: 30px;
 		transition: all .3s;
 	}
@@ -915,7 +915,7 @@
 		font-size: 18px;
 		line-height: 25px;
 		letter-spacing: 0.05px;
-		font-weight: bold;
+		font-weight: 700;
 		@include media("<phone"){
 			margin-bottom: 16px;
 		}
@@ -932,7 +932,7 @@
 		border-radius: 5px;
 		font-size: 12px;
 		line-height: 16px;
-		font-weight: bold;
+		font-weight: 700;
 		transition: all .3s;
 		&:hover{
 			transform: translate(2px, -2px);
@@ -1010,7 +1010,7 @@
 			height: 32px;
 			margin: 0 8px 0 0;
 		}
-		dt h3{
+		dt strong{
 			font-weight: 400;
 		}
 		dd{
@@ -1057,7 +1057,7 @@
 		min-width: 90px;
 		font-size: 12px;
 		line-height: 16px;
-		font-weight: bold;
+		font-weight: 700;
 		padding: 6px 8px;
 		border: 1px solid $orange;
 		color: $orange;
@@ -1177,10 +1177,11 @@
 		}
 	}
 	&__map-img-block{
-		background: url(#{$images}about-img-block.jpg) 50% 50% no-repeat;
-		background-size: cover;
 		display: block;
-		height: 555px;
+		padding-top: 50%;
+		@include media("<phone"){
+			padding-top: 68%;
+		}
 	}
 }
 .facts{
@@ -1222,7 +1223,7 @@
 		position: relative;
 		font-size: 18px;
 		line-height: 25px;
-		font-weight: bold;
+		font-weight: 700;
 		&:after{
 			content: '';
 			position: absolute;
@@ -1300,7 +1301,7 @@
 		display: block;
 		font-size: 18px;
 		line-height: 25px;
-		font-weight: bold;
+		font-weight: 700;
 		text-align: center;
 		margin-bottom: 25px;
 	}
@@ -1376,7 +1377,7 @@
 	&__descr{
 		font-size: 18px;
 		line-height: 25px;
-		font-weight: bold;
+		font-weight: 700;
 		color: $scorpion;
 		transition: all .3s;
 	}
@@ -1448,7 +1449,7 @@
 		padding: 20px;
 		font-size: 18px;
 		line-height: 25px;
-		font-weight: bold;
+		font-weight: 700;
 	}
 }
 .catalogue{
@@ -1502,7 +1503,7 @@
 		display: block;
 		font-size: 18px;
 		line-height: 25px;
-		font-weight: bold;
+		font-weight: 700;
 		text-align: center;
 		padding: 15px 5px;
 	}
@@ -1516,7 +1517,7 @@
 		}
 		.form_line{
 			max-width: 444px;
-			margin: 0 0 0 auto;
+			margin: 0 0 0 auto !important;
 			@include media("<phone"){
 				max-width: 100%;
 			}
@@ -1618,7 +1619,7 @@
 		.details{
 			font-size: 14px;
 			line-height: 19px;
-			font-weight: bold;
+			font-weight: 700;
 			text-decoration: underline;
 			margin-left: 90px;
 			transition: all .3s;

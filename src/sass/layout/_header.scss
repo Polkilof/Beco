@@ -134,15 +134,9 @@
 				}
 			}
 		}
-		.wrapper{
-			/* margin: 0 280px 0 -280px;
-			@include media("<phone"){
-				margin: 0 260px 0 -260px;
-			} */
-		}
 		.main-nav{
 			opacity: 1;
-			transform: translateX(0);
+			right: 0;
 		}
 		.fader{
 			opacity: .45;

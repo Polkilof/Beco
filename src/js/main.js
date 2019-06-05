@@ -54,6 +54,15 @@ function mobileMenu(){
 	$('.fader').on('click touchmove', function(event) {
 		$('body').removeClass('menu-opened');
 	});
+	$(document).on('touchmove', function(event) {
+		if ($('body').hasClass('menu-opened') && $(window).width() < 992) {
+			if ($('#main-nav').has(event.target).length) {
+				return true;
+			} else {
+				event.preventDefault();
+			}
+		}
+	});
 }
 
 function accordeon(){
@@ -179,6 +188,34 @@ function validateFields(){
 			}
 		}
 	});
+	$("._validate2").validate({
+		highlight: function(element) {
+			$(element).parent().addClass('form__box_error').removeClass('form__box_valid');
+		},
+		unhighlight: function(element) {
+			$(element).parent().removeClass('form__box_error').addClass('form__box_valid');
+		},
+		rules: {
+			request: {
+				required: false,
+			},
+			email: {
+				required: true,
+				myEmail: true,
+			}
+		},
+		messages: {
+			request: {
+				required: false,
+			},
+			
+			email: {
+				required: false,
+				email: false,
+				myEmail: false,
+			}
+		}
+	});
 	$.validator.addMethod(
 		"myName",
 		function(value, element){
@@ -198,15 +235,17 @@ function validateFields(){
 		}
 	);
 }
+
 function enableClick(){
 	$('.form-group-check').on('click', function(){
 		var check = $(this).find('input').prop("checked");
+		console.log(check);
 		if ( check == true ){
-			$('.form-group-button-dis, .form-group-button').removeClass('btn-disable');
-			$('.form-group-button-dis, .form-group-button').prop('disabled',false);
+			$(this).parents('form').find('.form-group-button-dis, .form-group-button').removeClass('btn-disable');
+			$(this).parents('form').find('.form-group-button-dis, .form-group-button').prop('disabled',false);
 		} else {
-			$('.form-group-button-dis, .form-group-button').addClass('btn-disable');
-			$('.form-group-button-dis, .form-group-button').prop('disabled',true);
+			$(this).parents('form').find('.form-group-button-dis, .form-group-button').addClass('btn-disable');
+			$(this).parents('form').find('.form-group-button-dis, .form-group-button').prop('disabled',true);
 		}
 	});
 }
