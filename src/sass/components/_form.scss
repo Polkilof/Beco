@@ -58,8 +58,10 @@
 				flex-flow: column;
 			}
 			.form-group-check{
-				max-width: 254px;
+				text-align: left;
+				max-width: 300px;
 				@include media("<phone"){
+					max-width: 90%;
 					margin: 0 auto 24px;
 				}
 			}
@@ -140,7 +142,7 @@
 	}
 }
 textarea.form__control{
-	height: 120px;
+	height: 144px;
 	resize: none;
 	&_small{}
 }

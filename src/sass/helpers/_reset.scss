@@ -305,6 +305,9 @@ p{margin: $paragraph-spacing;}
 	max-width:600px;
 	margin: 0 auto;
 	padding: 40px 30px;
+	@include media("<phone"){
+		padding: 40px 20px 30px !important;
+	}
 	&__holder{
 		position: relative;
 		padding: 20px 0;
