@@ -199,20 +199,51 @@ function validateFields(){
 			request: {
 				required: false,
 			},
+			companyname: {
+				required: true,
+				minlength: 0,
+			},
 			email: {
 				required: true,
 				myEmail: true,
-			}
+			},
+			country: {
+				required: true,
+				minlength: 0,
+			},
+			question: {
+				required: true,
+				minlength: 0,
+			},
+			message: {
+				required: true,
+				minlength: 0,
+			},
 		},
 		messages: {
 			request: {
 				required: false,
 			},
-			
+			companyname: {
+				required: false,
+				minlength: false,
+			},
 			email: {
 				required: false,
 				email: false,
 				myEmail: false,
+			},
+			country: {
+				required: false,
+				minlength: false,
+			},
+			question: {
+				required: false,
+				minlength: false,
+			},
+			message: {
+				required: false,
+				minlength: false,
 			}
 		}
 	});

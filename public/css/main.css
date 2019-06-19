@@ -404,6 +404,9 @@ p {
   max-width: 600px;
   margin: 0 auto;
   padding: 40px 30px; }
+  @media (max-width: 767px) {
+    .modal {
+      padding: 40px 20px 30px !important; } }
   .modal__holder {
     position: relative;
     padding: 20px 0;
@@ -518,7 +521,7 @@ p {
   float: left;
   width: 211px;
   height: 98px;
-  background: url("../images/logo.svg") no-repeat 50% 50%;
+  background: url("../images/logo.png") no-repeat 50% 50%;
   background-size: 100% auto;
   overflow: hidden;
   text-indent: -9999px;
@@ -1069,7 +1072,7 @@ p {
 
 /* footer */
 .footer-page {
-  padding: 120px 0 0;
+  padding: 105px 0 0;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
@@ -1081,7 +1084,7 @@ p {
       background: none; } }
   @media (max-width: 767px) {
     .footer-page {
-      padding: 26px 0 0; } }
+      padding: 20px 0 0; } }
   .footer-page__copy {
     display: block;
     text-align: center;
@@ -1118,9 +1121,9 @@ p {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 20%;
             flex: 1 1 20%;
-    padding: 0 15px 30px; }
+    padding: 15px; }
   .footer-page .row .h3 {
-    margin-bottom: 24px; }
+    margin-bottom: 36px; }
 
 .footer-links__list {
   margin: 0;
@@ -1129,7 +1132,7 @@ p {
 
 .footer-links__item {
   display: block;
-  margin-bottom: 8px; }
+  margin-bottom: 13px; }
   .footer-links__item:last-child {
     margin-bottom: 0; }
   .footer-links__item address.footer-links__link_contact:hover {
@@ -1467,7 +1470,7 @@ p {
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center;
-      height: 106px;
+      height: 150px;
       margin-bottom: 10px; }
       .our-services__list-img img {
         display: block;
@@ -1489,10 +1492,6 @@ p {
       @media (max-width: 767px) {
         .our-services__list-holder {
           font-size: 12px; } }
-      .our-services__list-holder:hover {
-        color: #5A5A5A;
-        -webkit-box-shadow: 0px 0px 40px rgba(94, 93, 93, 0.1);
-                box-shadow: 0px 0px 40px rgba(94, 93, 93, 0.1); }
   .our-services .h4 {
     font-weight: 600; }
   .our-services p {
@@ -2987,9 +2986,11 @@ p {
             -ms-flex-flow: column;
                 flex-flow: column; } }
     .form__box-container .form-group-check {
-      max-width: 254px; }
+      text-align: left;
+      max-width: 300px; }
       @media (max-width: 767px) {
         .form__box-container .form-group-check {
+          max-width: 90%;
           margin: 0 auto 24px; } }
 
 .form__label {
@@ -3059,7 +3060,7 @@ p {
       border: 1px solid #E9E9E9; }
 
 textarea.form__control {
-  height: 120px;
+  height: 144px;
   resize: none; }
 
 .form-group {
