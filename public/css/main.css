@@ -2600,8 +2600,8 @@ p {
     transition: all .3s; }
     .components__link:hover {
       background: #fff;
-      -webkit-box-shadow: 0px 0px 40px rgba(94, 93, 93, 0.1);
-              box-shadow: 0px 0px 40px rgba(94, 93, 93, 0.1); }
+      -webkit-box-shadow: 0px 0px 30px rgba(94, 93, 93, 0.3);
+              box-shadow: 0px 0px 30px rgba(94, 93, 93, 0.3); }
     .components__link:first-child {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -2655,13 +2655,13 @@ p {
     @media (max-width: 549px) {
       .catalogue__item {
         width: 100%;
-        padding: 0; } }
+        padding: 0 0 15px; } }
   .catalogue__link {
     display: block; }
     .catalogue__link:hover {
       background: #fff;
-      -webkit-box-shadow: 0px 0px 40px rgba(94, 93, 93, 0.1);
-              box-shadow: 0px 0px 40px rgba(94, 93, 93, 0.1); }
+      -webkit-box-shadow: 0px 0px 30px rgba(94, 93, 93, 0.3);
+              box-shadow: 0px 0px 30px rgba(94, 93, 93, 0.3); }
   .catalogue__box-img {
     display: block;
     position: relative;
