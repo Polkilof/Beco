@@ -316,6 +316,18 @@ p{margin: $paragraph-spacing;}
 			padding: 0;
 		}
 	}
+	&__ico{
+		display: inline-block;
+		vertical-align: top;
+		width: 54px;
+		height: 54px;
+		color: #28CD6A;
+		margin: 0 0 20px;
+		img{
+			display: block;
+			width: 100%;
+		}
+	}
 	&__title{
 		margin-bottom: 40px;
 		@include media("<phone"){
